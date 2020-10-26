@@ -1,0 +1,59 @@
+import React from "react"
+import Layout from '../components/layout';
+import useInicio from '../hooks/useInicio';
+import { css } from '@emotion/core'; 
+import styled from '@emotion/styled'; 
+import heroCss from '../css/hero.module.css'; 
+
+import ListadoPropiedades from '../components/listadoPropiedades';
+
+import BackgroundImage from 'gatsby-background-image'; 
+
+import ImagenEnc from '../components/encuentra'; 
+
+const ImagenInicio = styled(BackgroundImage)`
+    height:600px;
+`;
+
+
+const Index = () => {
+
+    const inicio = useInicio();
+    const {nombre,  contenido,  imagen } = inicio[0]; 
+
+    
+
+    return (
+        <Layout>
+            <main>
+                <ImagenInicio
+                    tag="section"  fluid={imagen.sharp.fluid} fadeIn="soft"
+                 >
+                    <div className={heroCss.imagenBg}>
+                        <h1 className={heroCss.titulo}>Venta de casas y departamentos exclusivos.</h1>      
+                    </div>  
+
+
+                 </ImagenInicio>
+                <div
+                   css={css`
+                    max-width:800px;
+                    margin:0 auto;
+                   `}>
+                        <h1>{nombre}</h1>
+                        <p css={css`
+                            text-align:center;
+                        `} >{contenido}</p>
+                   </div>
+            </main>
+
+            <ImagenEnc></ImagenEnc>
+
+            <ListadoPropiedades></ListadoPropiedades>
+           
+        </Layout>
+    )
+
+}
+
+export default Index;
