@@ -1,6 +1,8 @@
 import React,  {Fragment} from 'react';
 import Iconos from '../components/iconos'
 import Image from 'gatsby-image'; 
+import {Link} from 'gatsby'; 
+import urlSlug from 'url-slug'; 
 
 import styled from '@emotion/styled'; 
 
@@ -24,15 +26,24 @@ const Contenido = styled.div`
         font-size:2rem;
         color:#75AB00;
     }
+`;
 
-
-
-
+const Boton = styled(Link)`
+        margin-top:2rem;
+        padding:1rem; 
+        background-color:#75AB00;
+        width:100%;
+        color:#FFF;
+        display:block;
+        text-decoration:none;
+        text-align:center;
+        font-weight:700;
+        text-transform:uppercase; 
 `;
 
 const PropiedadVista = ({propiedad}) => {
 
-    const {id, nombre, descripcion, precio, banio, estacionamineto, habitaciones, categoria,imagen} = propiedad;
+    const {nombre, precio, banio, estacionamineto, habitaciones,imagen} = propiedad;
     return ( 
         <Fragment>
                 <Card>
@@ -46,6 +57,9 @@ const PropiedadVista = ({propiedad}) => {
                           estacionamiento={estacionamineto}
                           habitaciones={habitaciones}
                         />
+                        <Boton to={urlSlug(nombre)}> 
+                            Visitar Propiedades                             
+                        </Boton>
                     </Contenido>
                 </Card>     
         </Fragment>

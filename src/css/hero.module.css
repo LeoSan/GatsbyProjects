@@ -16,8 +16,23 @@
     max-width: 800px;
 }
 
-.separacion{
-    margin-top: 5rem;;
+.separa{
+    margin-top: 5rem;
+    font-size: 3rem;
+    text-align: center;
+    color: cornflowerblue;
+}
+
+.contFooter{
+    margin-top: 5rem;
+    background-color: rgba(44,62,80);
+    padding: 1rem;
+}
+
+
+.parrafoFooter{
+    margin-top: 1rem;
+    text-align: center;
 }
 
 .propiedades{

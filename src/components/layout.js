@@ -2,6 +2,7 @@ import React from "react"
 import Helmet from 'react-helmet'; 
 import {Global, css} from '@emotion/core'; 
 import Header from './header';
+import Footer from './footer';
 
 
 const Layout = ({ children }) => {
@@ -71,6 +72,7 @@ const Layout = ({ children }) => {
      </Header>
     
       {children}
+      <Footer titulo = "Bienes Raices - Gatsby"/>
     </>
   )
 }
